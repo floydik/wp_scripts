@@ -31,6 +31,6 @@ $q = "INSERT INTO `".$table_prefix."usermeta` (`umeta_id`, `user_id`, `meta_key`
 VALUES (NULL, (Select max(id) FROM ".$table_prefix."users), 'wp_user_level', '10');";
 if ($mysqli->query($q) === TRUE) $c = TRUE;
 
-if ($a && $b && $c) echo "User ".$userlogin." with password ".$userpass." suscessfully added.<br /n>";
+if ($a && $b && $c) echo "User ".$userlogin." with password ".$userpass." successfully added.<br /n>";
 
 ?>
