@@ -21,20 +21,16 @@ $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         }
 $q = "INSERT INTO `".$table_prefix."users` (`user_login`, `user_pass`, `user_nicename`, `user_email`, `user_status`)
 VALUES ('".$userlogin."', MD5('".$userpass."'), '".$usernicename."', '".$useremail."', '0');";
-if ($mysqli->query($q) === TRUE) {
-                printf("INSERT OK<br />");
-}
+if ($mysqli->query($q) === TRUE) $a = TRUE;
 
 $q = "INSERT INTO `".$table_prefix."usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`)
 VALUES (NULL, (Select max(id) FROM ".$table_prefix."users), 'wp_capabilities', 'a:1:{s:13:\"administrator\";s:1:\"1\";}');";
-if ($mysqli->query($q) === TRUE) {
-                printf("INSERT OK<br />");
-}
+if ($mysqli->query($q) === TRUE) $b = TRUE;
 
 $q = "INSERT INTO `".$table_prefix."usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`)
 VALUES (NULL, (Select max(id) FROM ".$table_prefix."users), 'wp_user_level', '10');";
-if ($mysqli->query($q) === TRUE) {
-                printf("INSERT <br />");
-}
+if ($mysqli->query($q) === TRUE) $c = TRUE;
+
+if ($a && $b && $c) echo "User ".$userlogin." with password ".$userpass." suscessfully added.<br /n>";
 
 ?>
