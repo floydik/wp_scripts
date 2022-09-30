@@ -23,7 +23,7 @@ VALUES ('$user_login', MD5('$user_pass'), '$user_nicename', '$user_email', '0');
 echo $q."<br /n>";
 
 $q = "INSERT INTO `'.$table_prefix.'_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) 
-VALUES (NULL, (Select max(id) FROM '.$table_prefix.'_users), 'wp_capabilities', 'a:1:{s:13:"administrator";s:1:"1";}');";
+VALUES (NULL, (Select max(id) FROM '.$table_prefix.'_users), 'wp_capabilities', 'a:1:{s:13:\"administrator\";s:1:"1";}');";
 echo $q."<br /n>";
 
 $q = "INSERT INTO `'.$table_prefix.'_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) 
