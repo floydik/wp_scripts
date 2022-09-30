@@ -1,1 +1,1 @@
-Some usefull scripts for WordPress
+Some useful scripts for WordPress
