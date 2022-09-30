@@ -24,11 +24,11 @@ VALUES ('".$userlogin."', MD5('".$userpass."'), '".$usernicename."', '".$userema
 if ($mysqli->query($q) === TRUE) $a = TRUE;
 
 $q = "INSERT INTO `".$table_prefix."usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`)
-VALUES (NULL, (Select max(id) FROM ".$table_prefix."users), 'wp_capabilities', 'a:1:{s:13:\"administrator\";s:1:\"1\";}');";
+VALUES (NULL, (Select max(id) FROM ".$table_prefix."users), '".$table_prefix."capabilities', 'a:1:{s:13:\"administrator\";s:1:\"1\";}');";
 if ($mysqli->query($q) === TRUE) $b = TRUE;
 
 $q = "INSERT INTO `".$table_prefix."usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`)
-VALUES (NULL, (Select max(id) FROM ".$table_prefix."users), 'wp_user_level', '10');";
+VALUES (NULL, (Select max(id) FROM ".$table_prefix."users), '".$table_prefix."user_level', '10');";
 if ($mysqli->query($q) === TRUE) $c = TRUE;
 
 if ($a && $b && $c) echo "User ".$userlogin." with password ".$userpass." successfully added.<br /n>";
