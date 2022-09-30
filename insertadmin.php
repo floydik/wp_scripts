@@ -11,7 +11,7 @@ $user_pass = "IbHaHer\drynluWumeedvib8";
 // user e-mail
 $user_email = "someone@somewhere.tld";
 
-include ("./wp_config.php");
+include ("wp_config.php");
 
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         if (mysqli_connect_error()) {
