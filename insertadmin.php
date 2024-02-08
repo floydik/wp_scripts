@@ -9,7 +9,7 @@ $usernicename = "Floydik from Brno";
 // user password
 $userpass = "IbHaHer\drynluWumeedvib8";
 // user e-mail
-$useremail = "someone@somewhere.ltd";
+$useremail = "someone@somewhere.tld";
 //
 
 require ("wp-config.php");
